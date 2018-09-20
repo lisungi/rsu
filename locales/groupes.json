@@ -1,0 +1,67 @@
+{
+    "groupes": [
+    {
+        "name": "utilisateurs",
+        "description": "tetetetetetetetettetetetetettetet",
+        "permissions.modules":
+        {
+            "utilisateurs" : "rw",
+            "cartes": "rw"
+        },
+        "dateCreation":
+        {
+            "date" : "06-09-18",
+            "time": "08.12"
+        },
+        "dateUpdate" :
+        {
+            "date": "06-09-18",
+            "time": "08.12"
+        },
+        "idCreator": {
+            "uid": "xxxDDDDAA",
+            "uidUpdator": "xxxx"
+        }
+    } ,
+    {
+        "name": "agents sociaux",
+        "description": "tetetetetetetetettetetetetettetet",
+        "permissions.modules": {
+            "utilisateurs": "rw",
+            "cartes": "rw"
+        },
+        "dateCreation": {
+            "date": "06-09-18",
+            "time": "08.12"
+        },
+        "dateUpdate": {
+            "date": "06-09-18",
+            "time": "08.12"
+        },
+        "idCreator": {
+            "uid": "xxxDDDDAA",
+            "uidUpdator": "xxxx"
+        }
+    },
+    {
+        "name": "UGP",
+        "description": "tetetetetetetetettetetetetettetet",
+        "permissions.modules": {
+            "utilisateurs": "rw",
+            "cartes": "rw"
+        },
+        "dateCreation": {
+            "date": "06-09-18",
+            "time": "08.12"
+        },
+        "dateUpdate": {
+            "date": "06-09-18",
+            "time": "08.12"
+        },
+        "idCreator": {
+            "uid": "xxxDDDDAA",
+            "uidUpdator": "xxxx"
+        }
+    }
+]
+}

@@ -1,0 +1,7 @@
+{
+    "require": {
+        "delight-im/auth": "^8.1",
+        "cocur/slugify": "^3.1",
+        "slim/slim": "^3.0"
+    }
+}

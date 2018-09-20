@@ -1,0 +1,51 @@
+{
+    "modules": [
+{
+        "name": "utilisateurs",
+        "paths": {
+            "path1": "user",
+            "path2": "user-add",
+            "path3": "user-group",
+            "path4": "user-profile"
+        },
+        "permissions": {
+            "permission": "rw"
+   
+        }
+    },
+    {
+        "name": "carte",
+        "paths": {
+            "path1": "user",
+            "path2": "user-add",
+            "path3": "user-group",
+            "path4": "user-profile"
+        },
+        "permissions": {
+            "permission": "r"
+        }
+    },
+    {
+        "name": "programmes",
+        "paths": {
+            "path1": "extensions",
+            "path2": "extension-add",
+            "path3": "extension-edit"
+        },
+        "permissions": {
+            "permission": "rw"
+        }
+    },
+    {
+        "name": "prestations",
+        "paths": {
+            "path1": "prestations",
+            "path2": "prestation-add",
+            "path3": "prestation-edit"
+        },
+        "permissions": {
+            "permission": "rwx"
+        }
+    }
+]
+}
