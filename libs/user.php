@@ -50,6 +50,11 @@ now(), '0', NULL, NULL, NULL, NULL, NULL, NULL)"
 
 function GetUsers()
 {
-    $req = Query("SELECT `users`.`id`,`users`.`email`,`users`.`username`,`utilisateurs`.`id`, `utilisateurs`.`noms` ,`utilisateurs`.`est_actif`, `utilisateurs`.`user_group`,  `utilisateurs`.`loginTime` FROM `utilisateurs`,`users` WHERE `users`.`id`=`utilisateurs`.`userid` ");
+    $req = Query("SELECT `users`.`id`,`users`.`email`,`users`.`username`,`utilisateurs`.`id`, `utilisateurs`.`noms` ,`utilisateurs`.`est_actif`, `utilisateurs`.`loginTime` FROM `utilisateurs`,`users`  WHERE `users`.`id`=`utilisateurs`.`userid` ");
     return $req;
+}
+
+function AddToGroup()
+{
+    
 }

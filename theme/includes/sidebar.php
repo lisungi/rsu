@@ -156,6 +156,12 @@
                   <div>Votre profil</div>
                 </a>
               </li>
+
+              <li class="sidenav-item">
+                <a href="modules-add" class="sidenav-link">
+                  <div>Modules RSU</div>
+                </a>
+              </li>
               
             </ul>
           </li>

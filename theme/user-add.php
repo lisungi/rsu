@@ -66,11 +66,15 @@
                     <div class="form-group col-md-4">
                       <label class="form-label">Groupe d'utilisateurs :</label>
                       <select class="custom-select" name="ugroup">
-                        <?php $nb = 0; $groupArry = GetAllGroups();
-                        for ($i = 0; $i <= count($groupArry); $i++) {; ?>
-                        <option><?php echo $groupArry["groupes"][$nb]['name']; ?></option>
-                          <?php $nb++; ?>
+                      <?php if (GetAllGroups()) {?>
+                      <?php $count = 0;
+                        foreach (GetAllGroups() as $item) {
+                            ; ?>
+                        <option><?= $item['nom_groupe']; ?></option>
                       <?php } ?>
+                      <?php } else { ?>
+                          <option>Aucun groupe existant</option>
+                      <?php }  ?>
                       </select>
                     </div>
 

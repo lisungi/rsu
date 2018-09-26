@@ -44,7 +44,15 @@
                     include THEME . "user-group.php";
                     break;
                 }
-
+                break;
+              
+              case "modules":
+                switch (GetSubPage()) {
+                  case "add":
+                    include THEME . "modules-add.php";
+                    break;
+                }
+                break;
             }
             ?>
 

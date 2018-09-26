@@ -1,66 +1,49 @@
 <?php
+
 function GetAllGroups()
 {
-    $groupArry = json_decode(file_get_contents(LOCALE . "groupes.json"), true);
-    return $groupArry;
+    $req = Query("SELECT `groupes`.`nom_groupe`,`groupes`.`desc_groupe`,`groupes`.`observations` FROM `groupes` ");
+    if (isset($req)) {
+            return $req;
+    } else {
+            return false;
+    }
 }
 
-function GetAllGroupByName()
+function GetGroupByName($groupName)
 {
-    $nameArray = array();
-    $groupArry = GetAllGroups("groupes");
-    $nb = 0;
-
-    for ($i = 0; $i <= count($groupArry); $i++) {
-        array_push($nameArray, $groupArry["groupes"][$nb]['name']);
-        $nb++;
+    $req=Query("SELECT `groupes`.`nom_groupe`,`groupes`.`desc_groupe`,`groupes`.`observations` FROM `groupes` WHERE `groupes`.`nom_groupe`='$groupName' LIMIT 1");
+    if (isset($req[0])) {
+        return $req[0];
+    } else {
+        return false;
     }
-    return $nameArray;
 }
 
-
-function createGroup($groupInfo= array())
+function AddGroup($groupName, $groupDesc, $groupPermissions=array())
 {
-    $groupInfo = func_get_args();
-    $groupArray = array();
+    global $DB;
 
-    if (isset($groupInfo)&& !empty($groupInfo)) {
+    $perms = '';
+    $msg = '';
 
-        $source = file_get_contents(LOCALE. "groupes.json");
-        $jsoArray = json_decode($source, true);
-
-        if (!in_array($groupInfo[0], GetAllGroupByName())) {
-            foreach ($groupInfo as $infos) {
-                $group = array(
-                    'name' => $infos[0],
-                    'desc' => $infos[1],
-                    'permission.modules' => addPermissions($infos[2]),
-                    'dateCreation' => date("Y-m-d H:i:s"),
-                    'idCreator' => $infos[3]
-                );
-            }
-            
-            array_push($group, $jsoArray['groupes']);
-            $arrJso = json_encode($jsoArray['groupes']);
-            file_put_contents(LOCALE. "groupes.json", $arrJso);
-
-            return "done";
-
-        } else {
-            return $groupInfo[0] . ' group already exist';
-        }
+    foreach (addPermissions($groupPermissions) as $key => $value) 
+    {
+        $perms .= $key . '=' . $value . '/';
     }
+    
+    if (GetGroupByName($groupName)) {
+        $msg = $groupName . 'existe déjà';
+        return $msg;
+    } else {
+        $DB->exec(
+            "INSERT INTO `groupes` (`id` ,`nom_groupe` ,`desc_groupe`,`date_group`, `observations`)
+                    VALUES (NULL , '$groupName',' $groupDesc', now(), '$perms')"
+        );
+        return $DB->lastInsertId();
+    }
+}
 
-};
-
-
-/**
- * Add Permissions Per Modules
- *
- * @param array $newArry 
- * 
- * @return void
- */
 function addPermissions($newArry=array())
 {
     $strArry = array();
@@ -78,13 +61,6 @@ function addPermissions($newArry=array())
     return $myArray;
 }
 
-/**
- * Shorten Permissions
- *
- * @param string $permission
- * 
- * @return void
- */
 function shortenPerm($permission='')
 {
     if (!empty($permission)) {
@@ -105,7 +81,8 @@ function shortenPerm($permission='')
                 $permission = "";
                 break;
         }
-
         return $permission;
     }
 }
+
+

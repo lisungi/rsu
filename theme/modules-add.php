@@ -2,11 +2,11 @@
 <div class="container-fluid flex-grow-1 container-p-y">
 
             <h4 class="font-weight-bold">
-                <span class="text-muted font-weight-light">Groupe /</span> Utilisateurs
+                <span class="text-muted font-weight-light">Module /</span> RSU
             </h4>
             <h5>
 <span class="font-weight-light">
-Ajouter un nouveau groupe d'utilisateurs RSU
+Ajouter un nouveau module RSU
 </span>
 </h5>
 
@@ -15,22 +15,22 @@ Ajouter un nouveau groupe d'utilisateurs RSU
   <div class ='alert alert-dark-danger alert-dismissible fade show d-none'><button type = 'button' class ='close' data-dismiss = 'alert' > × </button> test
   </div>
                 <div class="card mb-4" >
-                  <h4 class="card-header">Nouveau groupe</h4>
+                  <h4 class="card-header">Nouveau module</h4>
                   <div class="card-body">
                     <form action="<?= BIN."Group"; ?>" method="POST">
                         <div class="form-group row">
                         <label class="form-label">Nom</label>
                         <input type="text" class="form-control mb-1" value="" placeholder="Entre le nom de groupe ici" name="ugroup">
-                        <small class="">Nom du groupe</small>
+                        <small class="">Nom du module</small>
                         </div>
                     
-                        <div class="form-group row">
+                        <div class="form-group row d-none">
                         <label class="form-label">Description</label>
                         <textarea class="form-control mb-1"  placeholder="Entre la description de groupe ici"  name="descgroup"></textarea>
                         <small class="">La description n’est pas très utilisée par défaut.</small>
                         </div>
 
-                        <div class="table-responsive row">
+                        <div class="table-responsive row d-none">
                     <table class="table card-table m-0">
                       <tbody>
                         <tr>
@@ -180,16 +180,20 @@ Ajouter un nouveau groupe d'utilisateurs RSU
                     <div class="col-sm-12 col-md-6">
                         <div class="dataTables_length d-none" id="DataTables_Table_1_length">
                             <label>Show <select name="DataTables_Table_1_length" aria-controls="DataTables_Table_1" class="form-control form-control-sm">
-                              <option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="DataTables_Table_1_filter" class="dataTables_filter">
+                              <option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div>
+                              <div class="col-sm-12 col-md-6"><div id="DataTables_Table_1_filter" class="dataTables_filter d-none">
                                 <label>
-                                  <?= e('search'); ?>:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="DataTables_Table_1"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="datatables-demo table table-striped table-bordered dataTable no-footer" id="DataTables_Table_1" role="grid" aria-describedby="DataTables_Table_1_info">
+                                  <?= e('search'); ?>:
+                                  <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="DataTables_Table_1"></label>
+                                </div>
+                            </div></div><div class="row"><div class="col-sm-12"><table class="datatables-demo table table-striped table-bordered dataTable no-footer" id="DataTables_Table_1" role="grid" aria-describedby="DataTables_Table_1_info">
                   <thead>
                     <tr role="row">
                       <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 150px;">
                         Nom</th>
-                      <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 202px;">
+                      <th class="sorting d-none" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 202px;">
                         Description</th>
-                      <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 183px;">
+                      <th class="sorting d-none" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 183px;">
                         Nombre d'utilisateurs</th>
                   </thead>
                   <tbody>
@@ -198,8 +202,7 @@ Ajouter un nouveau groupe d'utilisateurs RSU
                           <tr class="gradeA odd" role="row">
                           <td class="sorting_<?php echo $count; ?>"> 
                                 <?= $item['nom_groupe']; ?></td>
-                          <td> <?= $item['desc_groupe']; ?></td>
-                          <td>A definir</td>
+                         
                           </tr>
                   <?php }  ?>
                 </tbody>
