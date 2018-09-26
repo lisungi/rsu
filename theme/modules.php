@@ -53,7 +53,7 @@ Ajouter un nouveau module RSU
                   <thead>
                     <tr role="row">
                       <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 150px;">
-                        Nom</th>
+                        Modules RSU</th>
                       <th class="sorting d-none" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 202px;">
                         Description</th>
                       <th class="sorting d-none" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 183px;">
@@ -61,11 +61,11 @@ Ajouter un nouveau module RSU
                   </thead>
                   <tbody>
                   <?php $count = 0;
-                        foreach (GetAllGroups() as $item) {; ?>
+                      foreach (GetModulePerm() as $item) {; 
+                      $mo = explode('-', $item); ?>
                           <tr class="gradeA odd" role="row">
                           <td class="sorting_<?php echo $count; ?>"> 
-                                <?= $item['nom_groupe']; ?></td>
-                         
+                                Module <?= $mo[0]; ?></td>
                           </tr>
                   <?php }  ?>
                 </tbody>
