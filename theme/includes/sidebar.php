@@ -64,7 +64,7 @@
 
             <ul class="sidenav-menu">
               <li class="sidenav-item ">
-                <a href="" class="sidenav-link">
+                <a href="map-all" class="sidenav-link">
                   <div>Gérer les Cartes</div>
                 </a>
               </li>
