@@ -28,8 +28,6 @@
                     include THEME . "user.php";
                     break;
 
-                  case "search":
-
                   case "trash":
                     include THEME . "user.php";
                     break;
@@ -47,11 +45,7 @@
                 break;
               
               case "modules":
-                switch (GetSubPage()) {
-                  case "add":
-                    include THEME . "modules-add.php";
-                    break;
-                }
+                include THEME . "modules.php";
                 break;
             }
             ?>

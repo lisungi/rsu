@@ -7,67 +7,38 @@ function GetAllModules()
     } else {
         return false;
     }
-
 }
 
-function AddModules($moduleName, $modulePermissions=array())
+function GetModule($modName)
 {
-    global $DB;
-
-    $perms = '';
-    $msg = '';
-
-    foreach (addPermissions($groupPermissions) as $key => $value) {
-        $perms .= $key . '=' . $value . '/';
-    }
-    
-    if (GetModuleByName($groupName)) {
-        $msg = $groupName . 'existe déjà';
-        return $msg;
-    } else {
-        $DB->exec(
-            "INSERT INTO `modules` (`id` ,`nom_module` ,`permissions_module`, `creation_date`)
-                    VALUES (NULL , '$moduleName',' $modulePermissions', now())"
-        );
-        return $DB->lastInsertId();
-    }
-}
-
-function GetModuleByName()
-{
-
-}
-
-function unShortenPerm($permission)
-{
-    if (!empty($permission)) {
-        switch ($permission) {
-        case 'r':
-                $perm = "lecture";
-            break;
-
-        case 'rw':
-                $perm = "ecriture";
-            break;
-
-        case 'rwx':
-                $perm = "execution";
-            break;
-        }
-        return $perm;
+    $req = Query("SELECT `modules`.`nom_module` FROM `modules` WHERE `nom_module`='$modName' ");
+    if (isset($req)) {
+        return $req;
     } else {
         return false;
     }
 }
 
-function GetModulePerm()
+function AddModules($moduleName)
 {
-    $modPerm = array();
-    foreach (GetAllModules() as $item) {
-        array_push($modPerm, $item['nom_module'].'-'.unShortenPerm($item['permissions_module']). '-'. 'on');
+    global $DB;
+    $msg = ''; 
+
+    if (GetModule($moduleName)) {
+        foreach (GetModule($moduleName) as $item) {
+            $msg .= $item['nom_module']. ' existe déjà ';
+        }
+        return $msg;
+    } else {
+        $DB->exec(
+            "INSERT INTO `modules` (`id`, `nom_module`, `permissions_module`, `creation_date`) 
+                    VALUES (NULL, '$moduleName', 'test', now())"
+        );
+        return $DB->lastInsertId();
     }
-    
-    return $modPerm;
 }
 
-
+function setDefaultModPerm()
+{
+    
+}
