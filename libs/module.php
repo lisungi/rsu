@@ -23,14 +23,10 @@ function AddModules($moduleName)
 {
     global $DB;
 
-    if (preg_match("/(?<=[a-z])-(?=[a-z])/i", $moduleName) ) {
-        $modName =  preg_replace("/(?<=[a-z])-(?=[a-z])/i", " ", $moduleName);
-    } else {
-        $modName = $moduleName;
-    }
+    $modName = $moduleName;
 
-    if (GetModule($modName)) {
-        foreach (GetModule($modName ) as $item) {
+    if (GetModule(preg_replace("/(?<=[a-z])-(?=[a-z])/i", " ",  $modName))) {
+        foreach (GetModule(preg_replace("/(?<=[a-z])-(?=[a-z])/i", " ",  $modName)) as $item) {
             $msg .= $item['nom_module']. ' existe déjà ';
         }
         return $msg;

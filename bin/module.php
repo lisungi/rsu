@@ -1,6 +1,5 @@
 <?php
-AddModules('programmes-utilisateurs');
-
-foreach (GetModulePerm() as $item) {
-    var_dump($item);
+if ($_POST['uMod'] <> "" ) {
+    AddModules($_POST['uMod']);
 }
+GoBack();
