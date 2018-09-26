@@ -22,23 +22,55 @@ function GetModule($modName)
 function AddModules($moduleName)
 {
     global $DB;
-    $msg = ''; 
 
-    if (GetModule($moduleName)) {
-        foreach (GetModule($moduleName) as $item) {
+    if (preg_match("/(?<=[a-z])-(?=[a-z])/i", $moduleName) ) {
+        $modName =  preg_replace("/(?<=[a-z])-(?=[a-z])/i", " ", $moduleName);
+    } else {
+        $modName = $moduleName;
+    }
+
+    if (GetModule($modName)) {
+        foreach (GetModule($modName ) as $item) {
             $msg .= $item['nom_module']. ' existe déjà ';
         }
         return $msg;
     } else {
         $DB->exec(
             "INSERT INTO `modules` (`id`, `nom_module`, `permissions_module`, `creation_date`) 
-                    VALUES (NULL, '$moduleName', 'test', now())"
+                    VALUES (NULL, '$modName ', 'rw', now())"
         );
         return $DB->lastInsertId();
     }
 }
 
-function setDefaultModPerm()
+function unShortenPerm($permission)
 {
+    if (!empty($permission)) {
+        switch ($permission) {
+        case 'r':
+                $perm = "lecture";
+            break;
+
+        case 'rw':
+                $perm = "ecriture";
+            break;
+
+        case 'rwx':
+                $perm = "execution";
+            break;
+        }
+        return $perm;
+    } else {
+        return false;
+    }
+}
+
+function GetModulePerm()
+{
+    $modPerm = array();
+    foreach (GetAllModules() as $item) {
+        array_push($modPerm, $item['nom_module'].'-'.unShortenPerm($item['permissions_module']). '-'. 'on');
+    }
     
+    return $modPerm;
 }

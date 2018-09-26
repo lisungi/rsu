@@ -1,3 +1,6 @@
 <?php
+AddModules('programmes-utilisateurs');
 
-var_dump(AddModules('proxy'));
+foreach (GetModulePerm() as $item) {
+    var_dump($item);
+}
