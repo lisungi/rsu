@@ -65,17 +65,17 @@
             <ul class="sidenav-menu">
               <li class="sidenav-item ">
                 <a href="" class="sidenav-link">
-                  <div>Tous les utilisateurs</div>
+                  <div>Gérer les Cartes</div>
                 </a>
               </li>
               <li class="sidenav-item">
-                <a href="#" class="sidenav-link">
-                  <div>Ajouter</div>
+                <a href="map-cas" class="sidenav-link">
+                  <div>Gérer les CAS/SAS</div>
                 </a>
               </li>
               <li class="sidenav-item">
-                <a href="#" class="sidenav-link">
-                  <div>Votre profil</div>
+                <a href="map-locations" class="sidenav-link">
+                  <div> Lieux</div>
                 </a>
               </li>
               

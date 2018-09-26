@@ -24,6 +24,7 @@ function AddModules($moduleName)
     global $DB;
 
     $modName = $moduleName;
+    $msg = array();
 
     if (GetModule(preg_replace("/(?<=[a-z])-(?=[a-z])/i", " ",  $modName))) {
         foreach (GetModule(preg_replace("/(?<=[a-z])-(?=[a-z])/i", " ",  $modName)) as $item) {

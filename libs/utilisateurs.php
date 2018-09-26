@@ -8,7 +8,7 @@ function SetUtilisateurs($userid, $twitter, $info)
         return UpdateAuthorInfo($userid, $twitter, $info);
     } else {
         $DB->exec("INSERT INTO `author` (`id` ,`userid` ,`twitter`,`info`)
-                      VALUES (NULL , '$userid','$twitter','$info')");
+                    VALUES (NULL , '$userid','$twitter','$info')");
         return $DB->lastInsertId();
     }
 }

@@ -13,7 +13,8 @@ Ajouter un nouveau module RSU
 <div class="row">
   <div class="col-md" style="padding-right: 0 !important; padding-left: 0 !important;">
                 <div class=" mb-4">
-                <div class ='alert alert-dark-danger alert-dismissible fade show '><button type = 'button' class ='close' data-dismiss = 'alert' > × </button> test
+                <div class ='alert alert-dark-danger alert-dismissible fade show d-none'>
+                  <button type = 'button' class ='close' data-dismiss = 'alert' > × </button>  Test
                 </div>
                 </div>
                 <div class="card mb-4" >
