@@ -69,7 +69,7 @@
                 </a>
               </li>
               <li class="sidenav-item">
-                <a href="map-cas" class="sidenav-link">
+                <a href="map-social" class="sidenav-link">
                   <div>Gérer les CAS/SAS</div>
                 </a>
               </li>

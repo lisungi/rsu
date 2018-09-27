@@ -47,6 +47,23 @@
               case "modules":
                 include THEME . "modules.php";
                 break;
+              
+              case "map":
+
+                switch (GetSubPage()) {
+                  default:
+                    include THEME . "map-all.php";
+                    break;
+
+                  case "social":
+                    include THEME . "map-social.php";
+                    break;
+                  case "locations":
+                    include THEME . "map-locations.php";
+                    break;
+                }
+                break;
+
             }
             ?>
 
