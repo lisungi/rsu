@@ -4,4 +4,3 @@
 //`creation_date`, `code_localisation`) 
 //VALUES(null, '', '', '', '', '', '', '', '', '')
 
-
