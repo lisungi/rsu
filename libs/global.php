@@ -213,28 +213,26 @@ function cleanString($in,$offset=null)
             $entity_end = strpos($out,';',$entity_start); 
             if ($entity_end === false) 
             { 
-                 return $out; 
+                return $out; 
             } 
             // zu lang um eine entity zu sein 
             else if ($entity_end > $entity_start+7) 
             { 
-                 // und weiter gehts 
-                 $out = cleanString($out,$entity_start+1); 
+                // und weiter gehts 
+                $out = cleanString($out,$entity_start+1); 
             } 
             // gottcha! 
             else 
             { 
-                 $clean = substr($out,0,$entity_start); 
-                 $subst = substr($out,$entity_start+1,1); 
-                 // &scaron; => "s" / &#353; => "_" 
-                 $clean .= ($subst != "#") ? $subst : "_"; 
-                 $clean .= substr($out,$entity_end+1); 
-                 // und weiter gehts 
-                 $out = cleanString($clean,$entity_start+1); 
+                $clean = substr($out,0,$entity_start); 
+                $subst = substr($out,$entity_start+1,1); 
+                // &scaron; => "s" / &#353; => "_" 
+                $clean .= ($subst != "#") ? $subst : "_"; 
+                $clean .= substr($out,$entity_end+1); 
+                // und weiter gehts 
+                $out = cleanString($clean,$entity_start+1); 
             } 
         } 
     } 
     return $out; 
-}  
-
-
+}

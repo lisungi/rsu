@@ -16,4 +16,4 @@ require_once LIB."category.php";
 require_once LIB."article.php";
 require_once LIB."image.php";
 require_once LIB."geoiploc.php";
-require_once LIB . "treeview.php";
+require_once LIB . "map.php";
