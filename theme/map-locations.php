@@ -1,3 +1,8 @@
+<?php
+// var_dump(AddLocation('Departement', 'DPT', 'DDAS', 'Brazzaville', 'BZV', 'ici DDAS Btazzaville', ''));
+// var_dump(GetLocJSO());
+var_dump(GetLocId('Makelékelé'));
+?>
 <div class="row">
     <div class ="col-12" >
 
@@ -28,11 +33,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-5" style="padding-left: 0px !important;">
                                 <label class="form-label text-dark ">Type :</label>
-                                <select class="custom-select" name="utype">
-                                    <option> Département</option>
-                                    <option>District</option>
-                                    <option>Region</option>
-                                </select>
+                                <?= ListTypes(); ?>
                             </div><!-- Type -->
 
                             <div class="form-group col-md-5" style="padding-left: 0px !important;">
@@ -71,7 +72,7 @@
                         <small class="form-text text-muted">Code du MASAH</small>
                         </div> <!-- Code MASAH -->
 
-                        <button type="submit" class="btn btn-primary" name="locBtn">Ajouter un lieu</button>
+                        <button type="submit" class="btn btn-primary" name="submitMap">Ajouter un lieu</button>
                     </div>
                     
                 </div>

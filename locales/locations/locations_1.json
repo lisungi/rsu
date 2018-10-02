@@ -1,16 +1,98 @@
-[{
-    "id": 1,
-    "parentId": "tetetetetetetetettetetetetettetet",
-    "title": "zzzz",
-    "dateCreation": "aaaa",
-    "dateUpdate": "xxxx",
-    "idCreator": "azzzizkzkz"
-}, {
-    "id": 2,
-    "parentId": "tetetetetetetetettetetetetettetet",
-    "title": "zzzz",
-    "dateCreation": "aaaa",
-    "dateUpdate": "xxxx",
-    "idCreator": "azzzizkzkz"
-}
+[
+    {
+        "id": "1",
+        "parent_id": "0",
+        "type": "Departement",
+        "code_mid": "11",
+        "code_masah": "DDAS",
+        "nom": "Brazzaville",
+        "abbreviation": "BZV",
+        "observations": "",
+        "creation_date": "2018-08-17 00:00:00",
+        "code_localisation": ""
+    },
+    {
+        "id": "2",
+        "parent_id": "1",
+        "type": "Commune",
+        "code_mid": "01",
+        "code_masah": "",
+        "nom": "Brazzaville",
+        "abbreviation": "BZV",
+        "observations": "",
+        "creation_date": "2018-08-17 00:00:00",
+        "code_localisation": ""
+    },
+    {
+        "id": "3",
+        "parent_id": "2",
+        "type": "Arrondissement",
+        "code_mid": "",
+        "code_masah": "CAS",
+        "nom": "Makelékelé",
+        "abbreviation": "",
+        "observations": "CAS Makelékelé",
+        "creation_date": "2018-08-17 00:00:00",
+        "code_localisation": ""
+    },
+    {
+        "id": "4",
+        "parent_id": "3",
+        "type": "Quartier",
+        "code_mid": "CQ901",
+        "code_masah": "SAS",
+        "nom": "Diata",
+        "abbreviation": "",
+        "observations": "SAS Diata",
+        "creation_date": "2018-08-17 00:00:00",
+        "code_localisation": ""
+    },
+    {
+        "id": "5",
+        "parent_id": "0",
+        "type": "Departement",
+        "code_mid": "11",
+        "code_masah": "DDAS",
+        "nom": "Brazzaville",
+        "abbreviation": "Bz",
+        "observations": "",
+        "creation_date": "2018-08-17 00:00:00",
+        "code_localisation": ""
+    },
+    {
+        "id": "6",
+        "parent_id": "5",
+        "type": "District",
+        "code_mid": "",
+        "code_masah": "",
+        "nom": "Ile Mbamou",
+        "abbreviation": "",
+        "observations": "",
+        "creation_date": "2018-08-17 00:00:00",
+        "code_localisation": ""
+    },
+    {
+        "id": "7",
+        "parent_id": "6",
+        "type": "Communauté",
+        "code_mid": "Communauté Rurale",
+        "code_masah": "",
+        "nom": "",
+        "abbreviation": "",
+        "observations": "",
+        "creation_date": "2018-08-17 00:00:00",
+        "code_localisation": ""
+    },
+    {
+        "id": "8",
+        "parent_id": "7",
+        "type": "Village",
+        "code_mid": "",
+        "code_masah": "SAS",
+        "nom": "Assemblée",
+        "abbreviation": "",
+        "observations": "",
+        "creation_date": "2018-08-17 00:00:00",
+        "code_localisation": ""
+    }
 ]
