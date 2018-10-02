@@ -173,7 +173,7 @@
                   <div class="card-body">
 
                     <div class="media align-items-center">
-                      <img src="/products/appwork/v110/assets_/img/avatars/5-small.png" alt="" class="d-block ui-w-80">
+                      <img src="<?= ASSETS; ?>_/img/avatars/5-small.png" alt="" class="d-block ui-w-80">
                       <div class="media-body ml-3">
                         <label class="form-label d-block mb-2">Avatar</label>
                         <label class="btn btn-outline-primary btn-sm">

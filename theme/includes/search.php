@@ -108,7 +108,7 @@
                   </div>
                   <div class="list-group list-group-flush">
                     <a href="javascript:void(0)" class="list-group-item list-group-item-action media d-flex align-items-center">
-                      <img src="/products/appwork/v110/assets_/img/avatars/6-small.png" class="d-block ui-w-40 rounded-circle" alt>
+                      <img src="<?= ASSETS; ?>_/img/avatars/6-small.png" class="d-block ui-w-40 rounded-circle" alt>
                       <div class="media-body ml-3">
                         <div class="text-dark line-height-condenced">Sit meis deleniti eu, pri vidit meliore docendi ut.</div>
                         <div class="text-light small mt-1">
@@ -118,7 +118,7 @@
                     </a>
 
                     <a href="javascript:void(0)" class="list-group-item list-group-item-action media d-flex align-items-center">
-                      <img src="/products/appwork/v110/assets_/img/avatars/4-small.png" class="d-block ui-w-40 rounded-circle" alt>
+                      <img src="<?= ASSETS; ?>_/img/avatars/4-small.png" class="d-block ui-w-40 rounded-circle" alt>
                       <div class="media-body ml-3">
                         <div class="text-dark line-height-condenced">Mea et legere fuisset, ius amet purto luptatum te.</div>
                         <div class="text-light small mt-1">
@@ -128,7 +128,7 @@
                     </a>
 
                     <a href="javascript:void(0)" class="list-group-item list-group-item-action media d-flex align-items-center">
-                      <img src="/products/appwork/v110/assets_/img/avatars/5-small.png" class="d-block ui-w-40 rounded-circle" alt>
+                      <img src="<?= ASSETS; ?>_/img/avatars/5-small.png" class="d-block ui-w-40 rounded-circle" alt>
                       <div class="media-body ml-3">
                         <div class="text-dark line-height-condenced">Sit meis deleniti eu, pri vidit meliore docendi ut.</div>
                         <div class="text-light small mt-1">
@@ -138,7 +138,7 @@
                     </a>
 
                     <a href="javascript:void(0)" class="list-group-item list-group-item-action media d-flex align-items-center">
-                      <img src="/products/appwork/v110/assets_/img/avatars/11-small.png" class="d-block ui-w-40 rounded-circle" alt>
+                      <img src="<?= ASSETS; ?>_/img/avatars/11-small.png" class="d-block ui-w-40 rounded-circle" alt>
                       <div class="media-body ml-3">
                         <div class="text-dark line-height-condenced">Lorem ipsum dolor sit amet, vis erat denique in, dicunt prodesset te vix.</div>
                         <div class="text-light small mt-1">
@@ -158,7 +158,7 @@
               <div class="demo-navbar-user nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
                   <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
-                    <img src="/products/appwork/v110/assets_/img/avatars/1.png" alt class="d-block ui-w-30 rounded-circle">
+                    <img src="<?= ASSETS; ?>_/img/avatars/1.png" alt class="d-block ui-w-30 rounded-circle">
                     <span class="px-1 mr-lg-2 ml-2 ml-lg-0">xxxxxx</span>
                   </span>
                 </a>

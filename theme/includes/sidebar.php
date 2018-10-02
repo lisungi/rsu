@@ -169,7 +169,7 @@
           <li class="sidenav-header small font-weight-semibold text-uppercase">Outils</li>
 
           <li class="sidenav-item">
-            <a href="javascript:void(0)" class="sidenav-link">
+            <a href="<?= TOOL; ?>" target="_blank" class="sidenav-link">
               <i class="sidenav-icon lnr lnr-file-empty"></i>
               <div>Full-questionnaire</div>
             </a>

@@ -1,9 +1,9 @@
-<?php require str_replace('/tools', '', __DIR__) . '/load.php'; $thisPath = explode('/', $_SERVER['REQUEST_URI'] );
+<?php 
+require str_replace('/tools', '', __DIR__) . '/load.php'; 
+$thisPath = explode('/', $_SERVER['REQUEST_URI'] ); 
 ?>
 <!DOCTYPE html>
-
 <html lang="en" class="default-style">
-
 <head>
   <title><?= SITE_NAME . ':'. strtoupper(e($thisPath[2])); ?></title>
 
